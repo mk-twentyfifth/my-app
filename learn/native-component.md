@@ -1,0 +1,33 @@
+think of View = Div
+
+Component I learn
+
+1. View
+2. Text
+3. StyleSheet
+4. Image
+
+---
+
+1. type of component
+   1. full page component
+   2. custom component - reusable
+   3. native/built-in component
+2. View component inherit the flex box automatically as column
+
+To style react native can use
+   1. native wind - use tailwind in react native
+   2. style component library
+   3. use built-in stylesheet api
+      1. StyleSheet.create({})
+      2. Inline style
+   4. Join Style using the StyleSheet.create({}) and the inline Style with the array in the styles property of the native component
+
+---
+
+Image
+
+1. use "source" not "src" like in the web
+2. for external image use 'source={uri: "externalphoto"}'
+3. for internal image use path
+   \\\* Tips 'import as {NAME} from "path"' -> use the NAME as the value to store in the "source={NAME}"
