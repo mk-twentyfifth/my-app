@@ -5,7 +5,7 @@ const ThemedView = ({ style, ...props }) => {
   const colorScheme = useColorScheme(); // light or dark
   const theme = Colors[colorScheme] ?? Colors.light;
 
-  return <View style={[{ backgroundColor: theme.uiBackground }, style]} {...props}></View>;
+  return <View style={[{ backgroundColor: theme.background }, style]} {...props}></View>;
 };
 
 export default ThemedView;
