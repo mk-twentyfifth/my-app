@@ -7,13 +7,20 @@ import { Colors } from "../../constants/Color";
 import ThemedButton from "../../components/ThemedButton";
 import { useState } from "react";
 import ThemedTextInput from "../../components/ThemedTextInput";
+import { useUser } from "../../hooks/useUser";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
-    console.log("Register Form Submitted", email, password);
+  const { register } = useUser();
+
+  const handleSubmit = async () => {
+    try {
+      await register(email, password);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
