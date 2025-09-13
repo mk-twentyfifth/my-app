@@ -16,7 +16,7 @@ export function UserProvider({ children }) {
       const response = await account.get();
       setUser(response);
     } catch (error) {
-      console.log(error);
+      throw Error(error.message);
     }
   }
 
@@ -25,11 +25,11 @@ export function UserProvider({ children }) {
       await account.create(ID.unique(), email, password);
       // after register successfully -> manually log in the user
       await login(email, password);
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      throw Error(error.message);
     }
   }
-  
+
   async function logout() {}
 
   return (
