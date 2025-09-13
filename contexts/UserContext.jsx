@@ -30,7 +30,14 @@ export function UserProvider({ children }) {
     }
   }
 
-  async function logout() {}
+  async function logout() {
+    try {
+      await account.deleteSession("current");
+      setUser(null);
+    } catch (error) {
+      throw Error(error.message);
+    }
+  }
 
   return (
     <UserContext.Provider value={{ user, login, logout, register }}>
