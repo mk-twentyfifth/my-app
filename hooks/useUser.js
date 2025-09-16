@@ -5,7 +5,7 @@ export function useUser() {
   const context = useContext(UserContext);
 
   if (!context) {
-    throw new Error("useUser must be using withing the UserProvider");
+    throw new Error("useUser must be using within the UserProvider");
   }
 
   return context;
