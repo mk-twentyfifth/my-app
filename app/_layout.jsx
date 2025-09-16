@@ -3,7 +3,7 @@ import { useColorScheme } from "react-native";
 import { Colors } from "../constants/Color";
 import { StatusBar } from "expo-status-bar";
 import { UserProvider } from "../contexts/UserContext";
-import { BooksContext } from "../contexts/BooksContext";
+import { BooksProvider } from "../contexts/BooksContext";
 
 const RootLayout = () => {
   const colorScheme = useColorScheme();
@@ -11,7 +11,7 @@ const RootLayout = () => {
 
   return (
     <UserProvider>
-      <BooksContext>
+      <BooksProvider>
         <StatusBar value="auto" />
         <Stack
           screenOptions={{
@@ -25,7 +25,7 @@ const RootLayout = () => {
 
           <Stack.Screen name="(dashboard)" options={{ headerShown: false }} />
         </Stack>
-      </BooksContext>
+      </BooksProvider>
     </UserProvider>
   );
 };
